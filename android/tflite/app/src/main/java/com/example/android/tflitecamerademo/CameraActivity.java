@@ -16,20 +16,65 @@ limitations under the License.
 package com.example.android.tflitecamerademo;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Camera;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.SystemClock;
+import android.widget.Toast;
 
 /** Main {@code Activity} class for the Camera app. */
 public class CameraActivity extends Activity {
 
+  private Camera2BasicFragment cameraFragment;
+  private boolean mBellagio;
+
+  public boolean ismBellagio() {
+    return mBellagio;
+  }
+
+  public void setmBellagio(boolean mBellagio) {
+    this.mBellagio = mBellagio;
+  }
+
+  public boolean ismCaesarsPalace() {
+    return mCaesarsPalace;
+  }
+
+  public void setmCaesarsPalace(boolean mCaesarsPalace) {
+    this.mCaesarsPalace = mCaesarsPalace;
+  }
+
+  private boolean mCaesarsPalace;
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_camera);
+    cameraFragment = Camera2BasicFragment.newInstance();
     if (null == savedInstanceState) {
       getFragmentManager()
           .beginTransaction()
-          .replace(R.id.container, Camera2BasicFragment.newInstance())
+          .replace(R.id.container, cameraFragment)
           .commit();
     }
   }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //checkStatus();
+    }
+
+    void checkStatus() {
+        boolean blar = true;
+        while (blar) {
+            if (this.mBellagio) {
+                Toast.makeText(getApplicationContext(), "I saw Bellagio!", Toast.LENGTH_SHORT).show();
+                blar = false;
+            } else if (this.mCaesarsPalace) {
+                Toast.makeText(getApplicationContext(), "I saw Caesars Palace!", Toast.LENGTH_SHORT).show();
+                blar = false;
+            }
+        }
+    }
 }

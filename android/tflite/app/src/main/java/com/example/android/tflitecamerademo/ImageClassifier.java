@@ -16,10 +16,14 @@ limitations under the License.
 package com.example.android.tflitecamerademo;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
 import android.os.SystemClock;
 import android.util.Log;
+import android.widget.Toast;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -82,6 +86,10 @@ public class ImageClassifier {
   private static final int FILTER_STAGES = 3;
   private static final float FILTER_FACTOR = 0.4f;
 
+
+  private boolean mCaesarsPalace = false;
+  private boolean mBellagio = false;
+
   private PriorityQueue<Map.Entry<String, Float>> sortedLabels =
       new PriorityQueue<>(
           RESULTS_TO_SHOW,
@@ -92,6 +100,12 @@ public class ImageClassifier {
             }
           });
 
+  public boolean ismCaesarsPalace() {
+    return mCaesarsPalace;
+  }
+  public boolean ismBellagio() {
+    return mBellagio;
+  }
   /** Initializes an {@code ImageClassifier}. */
   ImageClassifier(Activity activity) throws IOException {
     tflite = new Interpreter(loadModelFile(activity));
@@ -212,10 +226,23 @@ public class ImageClassifier {
       }
     }
     String textToShow = "";
+    int order = 0;
     final int size = sortedLabels.size();
     for (int i = 0; i < size; ++i) {
       Map.Entry<String, Float> label = sortedLabels.poll();
+      order++;
       textToShow = String.format("\n%s: %4.2f",label.getKey(),label.getValue()) + textToShow;
+        if (label.getKey().equals("caesars palace") && order == 1) {
+          mCaesarsPalace = true;
+          mBellagio = false;
+        } else if (label.getKey().equals("bellagio") && order == 1) {
+          mBellagio = true;
+          mCaesarsPalace = false;
+        } else {
+          mBellagio = false;
+          mCaesarsPalace = false;
+        }
+
     }
     return textToShow;
   }

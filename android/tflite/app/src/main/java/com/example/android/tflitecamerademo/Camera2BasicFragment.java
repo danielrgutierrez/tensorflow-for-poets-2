@@ -22,6 +22,7 @@ import android.app.DialogFragment;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
@@ -54,8 +55,12 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -83,6 +88,13 @@ public class Camera2BasicFragment extends Fragment
   private boolean checkedPermissions = false;
   private TextView textView;
   private ImageClassifier classifier;
+
+  private boolean mBellagio;
+  private boolean mCaesarsPalace;
+  private Button moreInfoButton;
+
+  private String result;
+
 
   /** Max preview width that is guaranteed by Camera2 API */
   private static final int MAX_PREVIEW_WIDTH = 1920;
@@ -196,7 +208,13 @@ public class Camera2BasicFragment extends Fragment
             @NonNull CaptureRequest request,
             @NonNull TotalCaptureResult result) {}
       };
+  public boolean ismBellagio() {
+    return mBellagio;
+  }
 
+  public boolean ismCaesarsPalace() {
+    return mCaesarsPalace;
+  }
   /**
    * Shows a {@link Toast} on the UI thread for the classification results.
    *
@@ -289,6 +307,24 @@ public class Camera2BasicFragment extends Fragment
   public void onViewCreated(final View view, Bundle savedInstanceState) {
     textureView = (AutoFitTextureView) view.findViewById(R.id.texture);
     textView = (TextView) view.findViewById(R.id.text);
+    moreInfoButton = (Button) view.findViewById(R.id.moreInfoButton);
+    moreInfoButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        
+        if (mBellagio && !mCaesarsPalace) {
+          Intent intent = new Intent(getActivity(), InformationActivity.class);
+          intent.putExtra("locationName", "Bellagio");
+          startActivity(intent);
+          ((Activity) getActivity()).overridePendingTransition(0,0);
+        } else if (mCaesarsPalace && !mBellagio) {
+          Intent intent = new Intent(getActivity(), InformationActivity.class);
+          intent.putExtra("locationName", "Caesars Palace");
+          startActivity(intent);
+          ((Activity) getActivity()).overridePendingTransition(0,0);
+        }
+      }
+    });
   }
 
   /** Load the model and labels. */
@@ -661,6 +697,18 @@ public class Camera2BasicFragment extends Fragment
     Bitmap bitmap =
         textureView.getBitmap(ImageClassifier.DIM_IMG_SIZE_X, ImageClassifier.DIM_IMG_SIZE_Y);
     String textToShow = classifier.classifyFrame(bitmap);
+    result = textToShow;
+    if (classifier.ismBellagio()) {
+      this.mBellagio = true;
+      this.mCaesarsPalace = false;
+      ((CameraActivity)getActivity()).setmBellagio(true);
+      ((CameraActivity)getActivity()).setmCaesarsPalace(false);
+    } else if (classifier.ismCaesarsPalace()) {
+      this.mCaesarsPalace = true;
+      this.mBellagio = false;
+      ((CameraActivity)getActivity()).setmCaesarsPalace(true);
+      ((CameraActivity)getActivity()).setmBellagio(false);
+    }
     bitmap.recycle();
     showToast(textToShow);
   }
