@@ -226,16 +226,14 @@ public class ImageClassifier {
       }
     }
     String textToShow = "";
-    int order = 0;
     final int size = sortedLabels.size();
     for (int i = 0; i < size; ++i) {
       Map.Entry<String, Float> label = sortedLabels.poll();
-      order++;
       textToShow = String.format("\n%s: %4.2f",label.getKey(),label.getValue()) + textToShow;
-        if (label.getKey().equals("caesars palace") && order == 1) {
+        if (label.getKey().equals("caesars palace") && i == 2) {
           mCaesarsPalace = true;
           mBellagio = false;
-        } else if (label.getKey().equals("bellagio") && order == 1) {
+        } else if (label.getKey().equals("bellagio") && i == 2) {
           mBellagio = true;
           mCaesarsPalace = false;
         } else {

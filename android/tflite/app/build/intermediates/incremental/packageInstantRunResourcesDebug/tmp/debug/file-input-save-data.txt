@@ -1,0 +1,15 @@
+#Internal package file, do not edit.
+#Sat Apr 28 12:56:46 PDT 2018
+1.base=C\:\\Users\\cbrom\\Dropbox\\School\\Computer Science Class\\CS472\\tensorflow-for-poets-2\\android\\tflite\\app\\build\\intermediates\\assets\\debug
+2.path=BUILD
+0.baseType=DIRECTORY
+2.base=C\:\\Users\\cbrom\\Dropbox\\School\\Computer Science Class\\CS472\\tensorflow-for-poets-2\\android\\tflite\\app\\build\\intermediates\\assets\\debug
+2.set=ASSET
+1.baseType=DIRECTORY
+count=3
+1.set=ASSET
+0.path=graph.lite
+0.set=ASSET
+0.base=C\:\\Users\\cbrom\\Dropbox\\School\\Computer Science Class\\CS472\\tensorflow-for-poets-2\\android\\tflite\\app\\build\\intermediates\\assets\\debug
+2.baseType=DIRECTORY
+1.path=labels.txt

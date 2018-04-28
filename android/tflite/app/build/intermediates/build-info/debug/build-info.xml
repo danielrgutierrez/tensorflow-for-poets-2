@@ -6,79 +6,79 @@
     density="xxhdpi"
     format="10"
     ir-eligibility="COMPATIBLE"
-    plugin-version="3.1.1"
-    timestamp="1524674119074"
-    token="3175203024333641596"
+    plugin-version="3.1.2"
+    timestamp="1524947401316"
+    token="-3167042699210938334"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="479" />
+        duration="5228" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="18" />
+        duration="112" />
     <task
         name="verifier"
-        duration="6" />
+        duration="84" />
 
     <artifact
-        location="/home/daniel/tensorflow-for-poets-2/android/tflite/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+        location="C:\Users\cbrom\Dropbox\School\Computer Science Class\CS472\tensorflow-for-poets-2\android\tflite\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
         type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1524670260146"
+        timestamp="1524946582466"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/home/daniel/tensorflow-for-poets-2/android/tflite/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
+            location="C:\Users\cbrom\Dropbox\School\Computer Science Class\CS472\tensorflow-for-poets-2\android\tflite\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
             type="SPLIT" />
         <artifact
-            location="/home/daniel/tensorflow-for-poets-2/android/tflite/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            location="C:\Users\cbrom\Dropbox\School\Computer Science Class\CS472\tensorflow-for-poets-2\android\tflite\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="/home/daniel/tensorflow-for-poets-2/android/tflite/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            location="C:\Users\cbrom\Dropbox\School\Computer Science Class\CS472\tensorflow-for-poets-2\android\tflite\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="/home/daniel/tensorflow-for-poets-2/android/tflite/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            location="C:\Users\cbrom\Dropbox\School\Computer Science Class\CS472\tensorflow-for-poets-2\android\tflite\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="/home/daniel/tensorflow-for-poets-2/android/tflite/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            location="C:\Users\cbrom\Dropbox\School\Computer Science Class\CS472\tensorflow-for-poets-2\android\tflite\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="/home/daniel/tensorflow-for-poets-2/android/tflite/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            location="C:\Users\cbrom\Dropbox\School\Computer Science Class\CS472\tensorflow-for-poets-2\android\tflite\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="/home/daniel/tensorflow-for-poets-2/android/tflite/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            location="C:\Users\cbrom\Dropbox\School\Computer Science Class\CS472\tensorflow-for-poets-2\android\tflite\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="/home/daniel/tensorflow-for-poets-2/android/tflite/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            location="C:\Users\cbrom\Dropbox\School\Computer Science Class\CS472\tensorflow-for-poets-2\android\tflite\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
         <artifact
-            location="/home/daniel/tensorflow-for-poets-2/android/tflite/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            location="C:\Users\cbrom\Dropbox\School\Computer Science Class\CS472\tensorflow-for-poets-2\android\tflite\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="/home/daniel/tensorflow-for-poets-2/android/tflite/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            location="C:\Users\cbrom\Dropbox\School\Computer Science Class\CS472\tensorflow-for-poets-2\android\tflite\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="/home/daniel/tensorflow-for-poets-2/android/tflite/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            location="C:\Users\cbrom\Dropbox\School\Computer Science Class\CS472\tensorflow-for-poets-2\android\tflite\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="/home/daniel/tensorflow-for-poets-2/android/tflite/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            location="C:\Users\cbrom\Dropbox\School\Computer Science Class\CS472\tensorflow-for-poets-2\android\tflite\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="/home/daniel/tensorflow-for-poets-2/android/tflite/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
+            location="C:\Users\cbrom\Dropbox\School\Computer Science Class\CS472\tensorflow-for-poets-2\android\tflite\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
         ir-eligibility="COMPATIBLE"
-        timestamp="1524674119074"
+        timestamp="1524947401316"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="/home/daniel/tensorflow-for-poets-2/android/tflite/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            location="C:\Users\cbrom\Dropbox\School\Computer Science Class\CS472\tensorflow-for-poets-2\android\tflite\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
     </build>
 

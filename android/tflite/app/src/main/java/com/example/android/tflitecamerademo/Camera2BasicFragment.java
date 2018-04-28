@@ -322,6 +322,8 @@ public class Camera2BasicFragment extends Fragment
           intent.putExtra("locationName", "Caesars Palace");
           startActivity(intent);
           ((Activity) getActivity()).overridePendingTransition(0,0);
+        } else {
+          Toast.makeText(getActivity(), "Location not recognized", Toast.LENGTH_SHORT).show();
         }
       }
     });
@@ -707,6 +709,11 @@ public class Camera2BasicFragment extends Fragment
       this.mCaesarsPalace = true;
       this.mBellagio = false;
       ((CameraActivity)getActivity()).setmCaesarsPalace(true);
+      ((CameraActivity)getActivity()).setmBellagio(false);
+    } else {
+      this.mCaesarsPalace = false;
+      this.mBellagio = false;
+      ((CameraActivity)getActivity()).setmCaesarsPalace(false);
       ((CameraActivity)getActivity()).setmBellagio(false);
     }
     bitmap.recycle();
